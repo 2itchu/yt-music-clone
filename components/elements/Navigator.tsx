@@ -43,7 +43,7 @@ import PlayListNav from "@/components/elements/PlayListNav";
         <section>
           <ul className={"flex flex-col"}>
           {dummyPlaylistArray.map((playlist)=>{
-            return<div><PlayListNav playlist={playlist}></PlayListNav></div>
+            return <PlayListNav key={playlist.id} playlist={playlist}></PlayListNav>
           })}
           </ul>
         </section>

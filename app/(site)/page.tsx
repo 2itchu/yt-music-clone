@@ -1,9 +1,16 @@
 import React from "react";
-import {sleep} from "@/lib/utils";
 
 const page = async ()=>{
-  await sleep(2000);
-  return <div>HomePage</div>;
+  return (
+      <div className={"min-h-[600px]"}>Homepage
+
+
+        <div className={"h-[500px]"}>Homepage</div>
+        <div className={"h-[500px]"}>Homepage</div>
+        <div className={"h-[500px]"}>Homepage</div>
+      </div>
+
+  );
 };
 
 export default page;
