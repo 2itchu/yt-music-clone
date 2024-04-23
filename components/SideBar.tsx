@@ -13,7 +13,7 @@ const Sidebar = ({children}) =>{
                     <Navigator/>
                 </div>
             </nav>
-            {children}
+            <div className={"w-full lg:w-[calc(100%-240px)]"}>{children}</div>
         </div>
     )
 }

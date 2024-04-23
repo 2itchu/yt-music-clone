@@ -17,3 +17,18 @@ export function getRandomElementFromArray(arr:any[]){
   const len = arr?.length;
   return arr[getRandomInt(0,len-1)];
 }
+
+
+export function chunkArray(arr: unknown[], chunkSize: number) {
+  // const resultArray = [ [],[],[],[]]
+  const resultArray = [];
+  for (let i = 0; i < arr.length; i += chunkSize) {
+    const chunk = arr.slice(i, i + chunkSize);
+    resultArray.push(chunk);
+  }
+  return resultArray;
+}
+
+export function generateRandomHex() {
+  return "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0");
+}
