@@ -6,10 +6,12 @@ import {useRouter} from "next/navigation";
 import {MdMoreVert} from "react-icons/md";
 import {FiPlay} from "react-icons/fi";
 import IconButton from "@/components/elements/IconButton";
+import usePlayerState from "@/hooks/usePlayerState";
 
 
 
 const PlayListCard = ({playlist}) =>{
+    const {addSongList}  = usePlayerState();
     const {push} = useRouter();
     const {id, owner, playlistName, songList} = playlist;
     const songListLen = songList?.length
@@ -18,8 +20,9 @@ const PlayListCard = ({playlist}) =>{
     const onClickCard = () =>{
         push(`/playlist?list=${id}`)
     };
-    const onClickPlay = () =>{
-        //TODO
+    const onClickPlay = (e) =>{
+        e.stopPropagation(); //상위 이벤트 호출하지 않음
+        addSongList(songList);
     }
 
     return (

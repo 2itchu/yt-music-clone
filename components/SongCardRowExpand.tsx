@@ -1,15 +1,16 @@
 "use client"
 import React from "react";
-import {TopSong} from "@/types";
+import {Song, TopSong} from "@/types";
 import Image from "next/image";
 import {FaCircle} from "react-icons/fa";
 import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai";
 import {FiMoreVertical, FiPlayCircle, FiThumbsDown, FiThumbsUp} from "react-icons/fi";
 import IconButton from "@/components/elements/IconButton";
 import {useRouter} from "next/navigation";
+import usePlayerState from "@/hooks/usePlayerState";
 
 interface SongCardRowExpandProps {
-    song : song;
+    song : Song;
 }
 
 const SongCardRowExpand:React.FC<SongCardRowExpandProps> = ({song}) =>{
@@ -18,11 +19,16 @@ const SongCardRowExpand:React.FC<SongCardRowExpandProps> = ({song}) =>{
     const onClickChannel = () =>{
         push(`/channel/${channelId}`);
     }
+    const  {addSongList} = usePlayerState();
+    const onClickPlay = (e) =>{
+        e.stopPropagation(); //상위 이벤트 호출하지 않음
+        addSongList([song]);
+    }
     return (
         <article className={"flex items-center flex-row gap-4 h-[48px] w-full relative group"}>
             <div className={"w-[48px] h-[48px] relative"}>
             <Image src={song.imageSrc} alt={"img"} fill className={"object-cover"}/>
-            <section className={"absolute top-0 hidden group-hover:flex w-[48px] h-[48px] items-center justify-center bg-black cursor-pointer"}>
+            <section onClick={onClickPlay} className={"absolute top-0 hidden group-hover:flex w-[48px] h-[48px] items-center justify-center bg-black cursor-pointer"}>
                 <FiPlayCircle size={20}/>
             </section>
             </div>
