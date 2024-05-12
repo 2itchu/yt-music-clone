@@ -40,7 +40,6 @@ const Header = ({children}) => {
 
         const handleScroll = () => {
             const scrollValue = headRef?.current?.scrollTop;
-            console.log(">scrollValue", scrollValue);
             setIsScrolled(scrollValue !== 0);
         };
 

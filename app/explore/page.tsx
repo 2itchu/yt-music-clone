@@ -1,7 +1,7 @@
 import React from "react";
 import PagePadding from "@/components/PagePadding";
 import Category from "@/app/explore/components/Category";
-import {dummyGenreList, dymmyGenreList, getAllPlaylist, getSongListTop10} from "@/lib/dummyData";
+import {dummyGenreList, getAllPlaylist, getSongListTop10} from "@/lib/dummyData";
 import {UserIcon} from "@/components/UserIcon";
 import PlayListCarousel from "@/components/PlayListCarousel";
 import SongListCarousel from "@/components/SongListCarousel";

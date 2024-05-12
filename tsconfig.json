@@ -12,6 +12,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    //Any타입 허용
+    "noImplicitAny": false,
     "plugins": [
       {
         "name": "next"

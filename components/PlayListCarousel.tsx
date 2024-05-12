@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import PlayListCard from "./PlayListCard";
 interface PlayListCarouselProps{
-    title : string;
+    title? : string;
     subTitle? : string;
     Thumbnail? : React.ReactNode;
     playlistArray? : Playlist[];

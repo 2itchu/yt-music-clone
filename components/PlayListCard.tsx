@@ -26,7 +26,7 @@ const PlayListCard = ({playlist}) =>{
         <article className={"h-[240px] cursor-pointer group"}>
             <section className={"relative h-[136px]"}
                      onClick={onClickCard} >
-                <Image src={imgSrc} fill={true} alt={"thumbnail"} className={"object-cover"}/>
+                <Image src={imgSrc} fill={true} alt={"thumbnail"} className={"object-cover rounded-md"}/>
                 <div className={"relative hidden group-hover:block bg-gradient-to-b from-[rgba(0,0,0,0.7)] top-0 w-full h-[136px]"}>
                     <div className={"absolute top-4 right-4"}>
                         <IconButton icon={<MdMoreVert size={20}/>}/>
